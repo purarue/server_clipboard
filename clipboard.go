@@ -3,7 +3,7 @@ package server_clipboard
 import (
 	"errors"
 	"fmt"
-	"github.com/seanbreckenridge/on_machine"
+	"github.com/purarue/on_machine"
 	"log"
 	"os"
 	"os/exec"

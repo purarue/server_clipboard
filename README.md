@@ -4,7 +4,7 @@ A server which saves my clipboard (in memory), so I can share it between my devi
 
 This has both a CLI interface and a web interface -- I use [termux](https://termux.com/) on my phone to communicate with my server (with `server_clipboard <c|p>` (copy/paste)); On other devices I don't have a terminal on, this has a web interface at `/`:
 
-<img src="https://github.com/seanbreckenridge/server_clipboard/blob/main/frontend/demo.png" alt="screencap of server html page">
+<img src="https://github.com/purarue/server_clipboard/blob/main/frontend/demo.png" alt="screencap of server html page">
 
 ### Install
 
@@ -13,7 +13,7 @@ Install `golang` (requires `1.18`+)
 You can clone and run `go build`, or:
 
 ```
-go install -v "github.com/seanbreckenridge/server_clipboard/cmd/server_clipboard@latest"
+go install -v "github.com/purarue/server_clipboard/cmd/server_clipboard@latest"
 ```
 
 which downloads, builds and puts the binary on your `$GOBIN`.

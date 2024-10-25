@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/seanbreckenridge/server_clipboard"
+	"github.com/purarue/server_clipboard"
 	"github.com/urfave/cli/v2"
 	"log"
 	"os"

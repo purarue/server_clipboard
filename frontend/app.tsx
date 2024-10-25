@@ -159,8 +159,8 @@ const App = () => {
         <footer>
           <p>
             More Info at{" "}
-            <a href="https://github.com/seanbreckenridge/server_clipboard">
-              github.com/seanbreckenridge/server_clipboard
+            <a href="https://github.com/purarue/server_clipboard">
+              github.com/purarue/server_clipboard
             </a>
           </p>
         </footer>
