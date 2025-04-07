@@ -3,11 +3,12 @@ package server_clipboard
 import (
 	"errors"
 	"fmt"
-	"github.com/purarue/on_machine"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
+
+	"github.com/purarue/on_machine"
 )
 
 func commandOutput(command string) string {
@@ -34,7 +35,9 @@ func FetchClipboard(clipboard string) string {
 		case "linux":
 			// if user has wl-clipboard (wayland) installed, use that
 			if _, err := exec.LookPath("wl-paste"); err == nil {
-				return commandOutput("wl-paste")
+				if os.Getenv("WAYLAND_DISPLAY") != "" {
+					return commandOutput("wl-paste")
+				}
 			}
 			return commandOutput("xclip -o -selection clipboard")
 		case "mac":
@@ -69,7 +72,10 @@ func SetClipboard(clipboard string) error {
 	case "linux":
 		// if user has wl-clipboard (wayland) installed, use that
 		if _, err := exec.LookPath("wl-copy"); err == nil {
-			return commandWithStdin("wl-copy", clipboard)
+			// if WAYLAND_DISPLAY is set, then assume wayland
+			if os.Getenv("WAYLAND_DISPLAY") != "" {
+				return commandWithStdin("wl-copy", clipboard)
+			}
 		}
 		return commandWithStdin("xclip -i -selection clipboard", clipboard)
 	case "mac":
