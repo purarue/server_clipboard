@@ -4,6 +4,7 @@
 
 ### react ###
 .DS_*
+.yarn
 *.log
 logs
 **/*.backup.*
